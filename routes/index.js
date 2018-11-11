@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -10,6 +10,11 @@ router.get('/', function(req, res, next) {
 router.get('/otherTheme', function(req, res, next) {
   res.render('index', {title: 'stillExpress', theme: '/stylesheets/pink.css', theOtherSiteThemeWise: '/'});
 });
+
+/* GoTo new Note Form*/
+router.get("/newNote/", function(req, res, next) {
+    res.render()
+}
 
 var Datastore = require('nedb');
 var db = new Datastore({ filename: 'files/db.txt', autoload: true});

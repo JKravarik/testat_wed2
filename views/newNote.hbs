@@ -1,0 +1,28 @@
+<h1>{{title}}</h1>
+
+<form method="post">
+
+    <div class="form_new_note">
+        <label id="title_label" for="title">Titel</label>
+        <input name="title" type="text" id="title" value="" required>
+        <label id="description_label" for="description">Beschreibung</label>
+        <textarea name="description" id="description"></textarea>
+        <label id="importance_label" for="importance">Wichtigkeit</label>
+        <input name="importance" type="range" id="importance" min="1" max="5" value="">
+        <label id="until_label" for="until">Fertig bis</label>
+        <input name="until" type="date" id="until" value="">
+    </div>
+
+    <label id="note_finished">
+        <input type=checkbox" name="finished">
+        Beenden
+    </label>
+
+    <input type="hidden" name="created" value="">
+
+    <div id="button_submit">
+        <button type="submit" id="save"></button>
+        <a href="/" class="button" id="cancel">Abbruch</a>
+    </div>
+
+</form>
