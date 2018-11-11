@@ -11,11 +11,6 @@ router.get('/otherTheme', function(req, res, next) {
   res.render('index', {title: 'stillExpress', theme: '/stylesheets/pink.css', theOtherSiteThemeWise: '/'});
 });
 
-/* GoTo new Note Form*/
-router.get("/newNote/", function(req, res, next) {
-    res.render()
-}
-
 var Datastore = require('nedb');
 var db = new Datastore({ filename: 'files/db.txt', autoload: true});
 
