@@ -1,27 +1,27 @@
 <h1>{{title}}</h1>
 <form method="post" action="/create">
-{{#with task}}
-    <div class="form_new_note">
-        <label id="title_label" for="title">{{title}}</label>
-        <input name="title" type="text" id="title" value="" required>
-        <label id="description_label" for="description">{{description}}</label>
-        <textarea name="description" id="description"></textarea>
-        <label id="importance_label" for="importance">{{importance}}</label>
-        <input name="importance" type="range" id="importance" min="1" max="5" value="">
-        <label id="until_label" for="until">{{dueTo}}</label>
-        <input name="until" type="date" id="until" value="">
-    </div>
+    {{#with task}}
+        <div class="form_new_note">
+            <label id="title_label" for="title">Title</label>
+            <input name="title" type="text" id="title" value="{{title}}" required>
+            <label id="description_label" for="description">Description</label>
+            <textarea name="description" id="description">{{description}}</textarea>
+            <label id="importance_label" for="importance">Importance</label>
+            <input name="importance" type="range" id="importance" min="1" max="5" value="{{importance}}">
+            <label id="until_label" for="until">Due to</label>
+            <input name="until" type="date" id="until" value="{{dueTo}}">
+        </div>
 
-    <label id="note_finished">
-        <input type="checkbox" name="finished" value="{{finishedChecked}}">
-        Done
-    </label>
+        <label id="note_finished">
+            <input type="checkbox" name="finished" value="{{finishedChecked}}">
+            Done
+        </label>
 
-    <input type="hidden" name="created" value="{{created}}">
-{{/with}}
-    <div id="button_submit">
-        <button type="submit" id="save">{{saveTask}}</button>
-        <a href="/" class="button" id="cancel">Cancel</a>
+        <input type="hidden" name="created" value="{{created}}">
+    {{/with}}
+    <div>
+        <input type="submit" class="button" id="save" value="{{saveTask}}">
+        <a href="/" id="cancel">Cancel</a>
     </div>
 
 </form>

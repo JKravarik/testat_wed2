@@ -6,7 +6,7 @@ module.exports.index = function(req, res) {
         title: 'Express',
         theme: '/stylesheets/style.css',
         theOtherSiteThemeWise: '/otherTheme',
-        task: ['test1','test2', 'test3']
+        task: db2
     });
 };
 
