@@ -1,3 +1,4 @@
+var db = require('../services/database.js');
 const express = require('express');
 const router = express.Router();
 
@@ -11,12 +12,11 @@ router.get('/otherTheme', function(req, res, next) {
   res.render('index', {title: 'stillExpress', theme: '/stylesheets/pink.css', theOtherSiteThemeWise: '/'});
 });
 
-var Datastore = require('nedb');
-var db = new Datastore({ filename: 'files/db.txt', autoload: true});
-
-db.loadDatabase(function(err){
-
+router.get('/newNote', function(req, res){
+  res.render('newNote', {title: 'newNote'});
 });
+
+
 
 
 module.exports = router;

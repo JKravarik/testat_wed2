@@ -1,23 +1,22 @@
-import datastore from 'nedb-promise'
+const Datastore = require('nedb');
+module.exports = new Datastore({filename: '../files/db.txt' , autoload: true});
 
-let DB = datastore ({
-    filename: '../files/db.txt',
-    autoload: true
-})
+const doc = { finished: false
+        , title: 'test1'
+        , importance: 2
+        , notes: 'blablabla'
+        ,finishDate: new Date()
+};
 
-async function doDatabaseStuff() {
+module.exports.listAllTasks = function (req, res){
+    module.exports.find({}, function (err, docs){});
+};
 
-    await DB.insert([{
-        num: 1, alpha: 'a'
-    }, {
-        num: 2, alpha: 'b'
-    }])
+module.exports.insertNewTask = function (req, res){
+    module.exports.insert(doc, function(err, newDoc){});
+};
 
-    let document = await DB.findOne({num:1})
 
-    let documents = await DB.cfind({})
-        . projection({num: 1, _id: 0})
-        .exec()
-}
 
-doDatabaseStuff()
+//db.find({}).sort({finished: 1}).exec(function (err, docs){});
+
