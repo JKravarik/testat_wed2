@@ -9,12 +9,13 @@ const doc = { finished: false
 };
 
 
-module.exports.listAllTasks = function (req, res){
-    module.exports.find({}, function (err, docs){});
+module.exports.getTask = function (id){
+    module.exports.findOne({}, function(err,docs){});
+    console.log('this is', module.exports.findOne({_id: id}, function (err, doc){}));
 };
 
-module.exports.insertNewTask = function (req, res){
-    module.exports.insert(doc, function(err, newDoc){});
+module.exports.sortBy = function (sortBy, sortDirection){
+    return module.exports.findOne({}).sort({[sortBy]: sortDirection}).exec();
 };
 
 module.exports.listFinished = function (req, res){
@@ -32,6 +33,4 @@ module.exports.save = function(task){
 };
 
 
-
-//db.find({}).sort({finished: 1}).exec(function (err, docs){});
 
