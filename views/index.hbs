@@ -7,7 +7,11 @@
 </form>
 <form action={{theOtherSiteThemeWise}} method='get'><input type='submit' value='Change Color' id="colorie"></form>
 <div class="show_notes">
-    <input type="checkbox" name="finished">
-    <label id="title_label" for="title">{{notTile}}</label>
+
+        {{#each task}}
+            <p class="tasktitle">{{this}}</p>
+        {{else}}
+            <p class="empty">No content</p>
+        {{/each}}
 
 </div>

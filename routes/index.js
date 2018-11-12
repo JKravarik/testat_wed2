@@ -9,6 +9,7 @@ const router = express.Router();
 router.get('/', index_controller.index);
 router.get('/otherTheme', index_controller.otherTheme);
 router.get('/newNote', newNote_controller.index);
+router.post('/create', newNote_controller.createNewTask);
 
 module.exports = router;
 
