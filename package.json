@@ -13,6 +13,7 @@
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
     "nedb": "^1.8.0",
+    "nedb-promise": "^2.0.1",
     "node-sass-middleware": "0.11.0"
   }
 }
