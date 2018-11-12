@@ -1,13 +1,32 @@
-<form action='/newNote' method='get'><input type='submit' value='Create new Note'></form>
-<form action=\"/sort?orderBy='orderBy'\" method='get'>
-    <input type='submit' name='orderBy' value='By finish Date' id="test">
-    <input type='submit' name='orderBy' value='By created Date'>
-    <input type='submit' name='orderBy' value='By Importance'>
-    <input type='submit' name='orderBy' value='Show Finished' >
-</form>
-<form action={{theOtherSiteThemeWise}} method='get'><input type='submit' value='Change Color' id="colorie"></form>
-<div class="show_notes">
-    <input type="checkbox" name="finished">
-    <label id="title_label" for="title">{{notTile}}</label>
+<h1>{{title}}</h1>
 
+<div class="container">
+    <form>
+        <div class="head">
+            <input type='submit' formmethod='get' formaction='/newNote' class='button' value='Create new Note'>
+            <input type='submit' formmethod='get' formaction='{{theOtherSiteThemeWise}}' class='button'
+                   value='Style Switcher' id='colorie'>
+        </div>
+    </form>
+
+    <form>
+        <div class="body">
+            <input type='submit' formmethod='get' formaction='' name='orderBy' class='button' value='By finish Date'
+                   id="test">
+            <input type='submit' formmethod='get' formaction='' name='orderBy' class='button' value='By created Date'>
+            <input type='submit' formmethod='get' formaction='' name='orderBy' class='button' value='By Importance'>
+            <input type='submit' formmethod='get' formaction='' name='orderBy' class='button' value='Show Finished'>
+        </div>
+    </form>
+
+    <div class="show_notes">
+        {{#each task}}
+            <input type="checkbox" name="finished">
+            <p class="tasktitle">{{this}}</p>
+        {{else}}
+            <div>
+                <p>No notes found. If you add a new note it will appear here.</p>
+            </div>
+        {{/each}}
+    </div>
 </div>

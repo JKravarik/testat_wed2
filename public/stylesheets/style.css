@@ -1,5 +1,7 @@
 body {
-  padding: 50px;
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 2rem;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
@@ -7,6 +9,31 @@ a {
 
 h1 {
   color: black; }
+
+.head {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+.body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+.button {
+  background-color: #efefef;
+  color: #32488b;
+  border: solid 1px #8d9db6;
+  border-radius: 0.5rem;
+  width: 180px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 16px; }
+
+.button:hover {
+  background-color: aliceblue; }
 
 .container {
   grid-template-columns: 40px auto 20px 30px;
