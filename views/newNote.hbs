@@ -1,26 +1,26 @@
-<h1>{{title}}</h1>
-
-<form method="post">
+<form method="post" action="/create">
+{{#with task}}
     <div class="form_new_note">
-        <label id="title_label" for="title">Title</label>
+        <label id="title_label" for="title">{{title}}</label>
         <input name="title" type="text" id="title" value="" required>
-        <label id="description_label" for="description">Description</label>
+        <label id="description_label" for="description">{{description}}</label>
         <textarea name="description" id="description"></textarea>
-        <label id="importance_label" for="importance">Importance</label>
+        <label id="importance_label" for="importance">{{importance}}</label>
         <input name="importance" type="range" id="importance" min="1" max="5" value="">
-        <label id="until_label" for="until">Due to</label>
+        <label id="until_label" for="until">{{dueTo}}</label>
         <input name="until" type="date" id="until" value="">
     </div>
 
     <label id="note_finished">
-        <input type="checkbox" name="finished" value >
-        Done!
+        <input type="checkbox" name="finished" value="{{finishedChecked}}">
+        Done
     </label>
 
-    <input type="hidden" name="created" >
-
+    <input type="hidden" name="created" value="{{created}}">
+{{/with}}
     <div id="button_submit">
-        <input type='submit' formmethod='' formaction='' class='button' value='Save'>
-        <input type='submit' formmethod='' formaction='' class='button' value='Cancel'>
+        <button type="submit" id="save">{{saveTask}}</button>
+        <a href="/" class="button" id="cancel">Cancel</a>
     </div>
+
 </form>
