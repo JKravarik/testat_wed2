@@ -8,4 +8,8 @@ a {
 h1 {
   color: black; }
 
+.container {
+  grid-template-columns: 40px auto 20px 30px;
+  grid-template-rows: 30px 30px auto; }
+
 /*# sourceMappingURL=style.css.map */
