@@ -1,7 +1,7 @@
 const db = require('../services/database.js');
 
 module.exports.index = function(req, res) {
-    let database = db.getTask('gRiP096IyFkA92MH');
+    let database = db.getAllTask();
     console.log(database);
     res.render('index', {
         title: 'Express',
