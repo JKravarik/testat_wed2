@@ -11,6 +11,7 @@ router.get('/newNote', newNote_controller.index);
 router.post('/create', newNote_controller.createNewTask);
 router.get('/editNote/:id', newNote_controller.editTask);
 router.post('/save/:id', newNote_controller.updateTask);
+router.post('/?orderBy=By+finish+Date', index_controller.sortedIndex);
 
 module.exports = router;
 

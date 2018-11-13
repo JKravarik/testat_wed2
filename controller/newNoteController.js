@@ -7,18 +7,18 @@ module.exports.index = function(req, res) {
         task: {},
         saveTask: 'Create',
         create: '/create',
-        theme: '/stylesheets/style.css'
+        theme: req.userSettings.style
     });
 };
 
 module.exports.createNewTask = function(req, res, next){
     const finished = req.body.finished === 'on';
     db.save({
-        title : req.body.title,
-        description: req.body.description,
-        until: req.body.until,
-        importance: req.body.importance,
-        finished: finished
+            title : req.body.title,
+            description: req.body.description,
+            until: req.body.until,
+            importance: req.body.importance,
+            finished: finished
         }
     );
     res.redirect('/');
@@ -45,8 +45,7 @@ module.exports.editTask = function (req, res, next) {
             task: docs,
             saveTask: 'Save',
             create: '/save/'+req.params.id,
-            theme: '/stylesheets/style.css'
+            theme: req.userSettings.style
         });
     });
 };
-
