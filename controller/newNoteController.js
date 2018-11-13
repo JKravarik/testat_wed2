@@ -12,27 +12,35 @@ module.exports.index = function(req, res) {
 };
 
 module.exports.createNewTask = function(req, res, next){
-    const finished = req.body.finished === 'on';
+    let done = '';
+    if(req.body.finishedState === ''){
+        done = "checked";
+    }
     db.save({
-            title : req.body.title,
+            title: req.body.title,
             description: req.body.description,
             until: req.body.until,
             importance: req.body.importance,
-            finished: finished
+            finished: done,
+            createDate: new Date().toISOString()
         }
     );
     res.redirect('/');
 };
 
 module.exports.updateTask = function(req, res, next){
-    console.log(req.params.id);
-    const finished = req.body.finished === 'on';
+    let done = '';
+    if(req.body.finishedState === ''){
+        done = "checked";
+    }
+    console.log("req.body.finished = ", done);
     db.update(req.params.id,{
             title : req.body.title,
             description: req.body.description,
             until: req.body.until,
             importance: req.body.importance,
-            finished: finished
+            finished: done,
+            createDate: new Date().toISOString()
         }
     );
     res.redirect('/');
