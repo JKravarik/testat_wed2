@@ -1,5 +1,3 @@
-{"title":"Test","description":"Blabla","until":"2018-11-15","importance":"3","finished":false,"_id":"BxCasUF4gikBAOaW"}
-{"title":"test4","description":"this is another testcase","until":"2018-11-14","importance":"2","finished":false,"_id":"ZXmGgXtHrj6SIE3Q"}
-{"title":"test1","description":"test1","until":"2018-11-30","importance":"3","finished":false,"_id":"gRiP096IyFkA92MH"}
-{"title":"test","description":"lets see if it still works","until":"2018-11-21","importance":"3","finished":false,"_id":"hjLpzJlwJtylVmW4"}
-{"title":"is it still working","description":"lets hope it is","until":"2018-11-29","importance":"4","finished":false,"_id":"mTfC5fHMTZBBtqwi"}
+{"title":"Test","description":"Blablaasdf uhuhjajajaja","until":"","importance":"3","finished":false,"_id":"9q5861afEMePIZxI"}
+{"title":"test325325234","description":"asdfasdfsa","until":"2018-11-16","importance":"3","finished":false,"_id":"AY9lvx7zkeW0dFQD"}
+{"title":"Test 334","description":"Blablaasdf","until":"","importance":"3","finished":false,"_id":"HCQW1E3s24aQWeYl"}

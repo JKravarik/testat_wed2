@@ -27,7 +27,9 @@
 
                         <label><input type="checkbox" name="finished" value="{{finishedChecked}}"></label>
                         <textarea>{{description}}</textarea>
-                        <a href="" id="edit" class="button">Edit</a>
+                        <form>
+                        <input type='submit' formmethod='get' formaction='/editNote/{{_id}}'  class='button' value='Edit'>
+                        </form>
                     </li>
                 </div>
             </ul>
