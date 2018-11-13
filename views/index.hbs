@@ -16,13 +16,25 @@
         </div>
     </form>
 
-    <div class="show_notes">
+    <div id="show_notes">
         {{#each task}}
-            <input type="checkbox" name="finished">
-            <p class="tasktitle">{{this}}</p>
+            <ul id="note_list">
+                <div>
+                    <li>
+                        <p id="task_due">{{dueTo}}</p>
+                        <p id="task_title">{{title}}</p>
+                        <p id="task_importance">{{importance}}</p>
+
+                        <label><input type="checkbox" name="finished" value="{{finishedChecked}}"></label>
+                        <textarea>{{description}}</textarea>
+                        <a href="" id="edit" class="button">Edit</a>
+                    </li>
+                </div>
+            </ul>
         {{else}}
             <div>
-                <p>No notes found. If you add a new note it will appear here.</p>
+                <p>No notes found.</p>
+                <p>If you add a new note it will appear here.</p>
             </div>
         {{/each}}
     </div>

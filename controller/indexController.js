@@ -4,15 +4,15 @@ module.exports.index = function(req, res) {
     let database = db.getAllTask();
     console.log(database);
     res.render('index', {
-        title: 'Express',
+        title: 'TODO List',
         theme: '/stylesheets/style.css',
         theOtherSiteThemeWise: '/otherTheme',
-        task: database
+        task: ["test1"]
     });
 };
 
 module.exports.otherTheme = function (req, res) {
-    res.render('index', {title: 'stillExpress', theme: '/stylesheets/pink.css', theOtherSiteThemeWise: '/'});
+    res.render('index', {title: 'TODO List', theme: '/stylesheets/pink.css', theOtherSiteThemeWise: '/'});
 };
 
 module.exports.list_finished = function(req, res){

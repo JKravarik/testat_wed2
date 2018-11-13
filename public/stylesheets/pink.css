@@ -16,4 +16,9 @@ h1 {
 .button:hover {
   background-color: mistyrose; }
 
+#show_notes {
+  background-color: #fcdbea;
+  color: #6b0053;
+  border: solid 1px #c8155e; }
+
 /*# sourceMappingURL=pink.css.map */
