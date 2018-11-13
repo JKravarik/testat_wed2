@@ -9,10 +9,10 @@
         </div>
 
         <div class="body">
-            <input type='submit' formmethod='get' formaction='' name='orderBy' class='button' value='By finish Date'>
-            <input type='submit' formmethod='get' formaction='' name='orderBy' class='button' value='By created Date'>
-            <input type='submit' formmethod='get' formaction='' name='orderBy' class='button' value='By Importance'>
-            <input type='submit' formmethod='get' formaction='' name='orderBy' class='button' value='Show Finished'>
+            <input type='submit' formmethod='get' formaction='/byFinishDate' name='orderBy' class='button' value='By finish Date'>
+            <input type='submit' formmethod='get' formaction='/byCreatedDate' name='orderBy' class='button' value='By created Date'>
+            <input type='submit' formmethod='get' formaction='/byImportance' name='orderBy' class='button' value='By Importance'>
+            <input type='submit' formmethod='get' formaction='/byShowFinished' name='orderBy' class='button' value='Show Finished'>
         </div>
     </form>
 
@@ -25,7 +25,7 @@
                         <p id="task_title">{{title}}</p>
                         <p id="task_importance">{{importance}}</p>
 
-                        <label><input type="checkbox" name="finished" value="{{finishedChecked}}"></label>
+                        <label><input type="checkbox" name="finished" value="" {{finished}}></label>
                         <textarea>{{description}}</textarea>
                         <form>
                         <input type='submit' formmethod='get' formaction='/editNote/{{_id}}'  class='button' value='Edit'>

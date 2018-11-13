@@ -26,11 +26,12 @@ module.exports.getAllTask = function (callback){
 };
 
 
-module.exports.sortedTasks = function (callback){
-    console.log("text:", req.userSettings.OrderBy)
+module.exports.sortedTasks = function (req, callback){
+
     setTimeout(
         () => {
-            db.find({}).sort({until: 'desc'}).exec(function(err, docs){
+            db.find({}).sort({[req.userSettings.orderBy]: req.userSettings.orderDirection }).exec(function(err, docs){
+
                 callback(docs);
             });
         },
