@@ -22,3 +22,12 @@ module.exports.createNewTask = function(req, res, next){
     res.redirect('/');
 };
 
+module.exports.editTask = function (req, res, next) {
+    res.render('newNote', {
+        title: 'edit Note',
+        task: {},
+        saveTask: 'Save'
+    });
+
+}
+
