@@ -1,3 +1,4 @@
+{"title":"Test","description":"Blabla","until":"2018-11-15","importance":"3","finished":false,"_id":"BxCasUF4gikBAOaW"}
 {"title":"test4","description":"this is another testcase","until":"2018-11-14","importance":"2","finished":false,"_id":"ZXmGgXtHrj6SIE3Q"}
 {"title":"test1","description":"test1","until":"2018-11-30","importance":"3","finished":false,"_id":"gRiP096IyFkA92MH"}
 {"title":"test","description":"lets see if it still works","until":"2018-11-21","importance":"3","finished":false,"_id":"hjLpzJlwJtylVmW4"}

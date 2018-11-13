@@ -4,10 +4,10 @@ module.exports.index = function(req, res) {
     let database = db.getAllTask();
     console.log(database);
     res.render('index', {
-        title: 'Express',
+        title: 'TODO List',
         theme: '/stylesheets/style.css',
         theOtherSiteThemeWise: '/otherTheme',
-        task: database
+        task: ["test1"]
     });
 };
 
