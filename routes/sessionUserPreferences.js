@@ -1,9 +1,12 @@
-/*export function sessionUserPreferences(req, res, nect) {
+const userPreferences = require('../services/userPreferences');
+
+module.exports = (req, res, next) => {
     const userSettings = req.session.userSettings || {
+        // default Wert oder aktueller Wert von der Session lesen
         orderBy: 'default',
         orderDirection: -1,
         filter: false,
-        style: 'pink.sass'
+        theme: 'style'
     };
     const {orderBy, filter, theme} = req.query;
 
@@ -16,7 +19,6 @@
     if(theme) {
         userSettings.theme = theme;
     }
-
-    req.userSettings = req.session.userSettings = userSettings;
+    req.userPreferences = req.session.userPreferences = userPreferences;
     next();
-} */
+}

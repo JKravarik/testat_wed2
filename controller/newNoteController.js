@@ -5,7 +5,7 @@ module.exports.index = function(req, res) {
     res.render('newNote', {
         title: 'Create new Note',
         task: {},
-        saveTask: 'Create'
+        saveTask: 'Create',
     });
 };
 

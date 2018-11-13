@@ -1,12 +1,11 @@
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
-const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const session = require('express-session');
 //const bodyParser = require('body-parser');
 const logger = require('morgan');
 const sassMiddleware = require('node-sass-middleware');
-
 const sessionUserPreferences = require('./routes/sessionUserPreferences');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -24,8 +23,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 //app.use(bodyParser());
 
-//app.use(session({}));
-//app.use(sessionUserPreferences);
+
+app.use(session({secret: 'casduichasidbnuwezrfinasdcvjkadfhsuilfuzihfioda', resave: false, saveUninitialized: true}));
+app.use(sessionUserPreferences);
 
 app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),
