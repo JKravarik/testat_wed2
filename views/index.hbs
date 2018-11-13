@@ -1,43 +1,49 @@
 <h1>{{title}}</h1>
 
-<div class="container">
-    <form>
-        <div class="head">
-            <input type='submit' formmethod='get' formaction='/newNote' class='button' value='Create new Note'>
-            <input type='submit' formmethod='get' formaction='{{theOtherSiteThemeWise}}' class='button'
-                   value='Style Switcher' id='colorie'>
-        </div>
 
-        <div class="body">
-            <input type='submit' formmethod='get' formaction='/byFinishDate' name='orderBy' class='button' value='By finish Date'>
-            <input type='submit' formmethod='get' formaction='/byCreatedDate' name='orderBy' class='button' value='By created Date'>
-            <input type='submit' formmethod='get' formaction='/byImportance' name='orderBy' class='button' value='By Importance'>
-            <input type='submit' formmethod='get' formaction='/byShowFinished' name='orderBy' class='button' value='Show Finished'>
-        </div>
-    </form>
-
-    <div id="show_notes">
-        {{#each task}}
-            <ul id="note_list">
-                <div>
-                    <li>
-                        <p id="task_due">{{dueTo}}</p>
-                        <p id="task_title">{{title}}</p>
-                        <p id="task_importance">{{importance}}</p>
-
-                        <label><input type="checkbox" name="finished" value="" {{finished}}></label>
-                        <textarea>{{description}}</textarea>
-                        <form>
-                        <input type='submit' formmethod='get' formaction='/editNote/{{_id}}'  class='button' value='Edit'>
-                        </form>
-                    </li>
-                </div>
-            </ul>
-        {{else}}
-            <div>
-                <p>No notes found.</p>
-                <p>If you add a new note it will appear here.</p>
-            </div>
-        {{/each}}
+<form>
+    <div class="head">
+        <input type='submit' formmethod='get' formaction='/newNote' class='button' value='Create new Note'>
+        <input type='submit' formmethod='get' formaction='{{theOtherSiteThemeWise}}' class='button'
+               value='Style Switcher' id='colorie'>
     </div>
-</div>
+
+    <div class="body">
+        <input type='submit' formmethod='get' formaction='/byFinishDate' name='orderBy' class='button'
+               value='By finish Date'>
+        <input type='submit' formmethod='get' formaction='/byCreatedDate' name='orderBy' class='button'
+               value='By created Date'>
+        <input type='submit' formmethod='get' formaction='/byImportance' name='orderBy' class='button'
+               value='By Importance'>
+        <input type='submit' formmethod='get' formaction='/byShowFinished' name='orderBy' class='button'
+               value='Show Finished'>
+    </div>
+</form>
+
+
+{{#if showfinished}}
+        <ul id="note_list">
+        {{#each task}}
+            <li>
+                <div id="task_box">
+                <p id="task_due">{{dueTo}}</p>
+                <p id="task_title">{{title}}</p>
+                <p id="task_importance">{{importance}}</p>
+
+                <label><input type="checkbox" name="finished" value="" {{finished}}></label>
+                <textarea>{{description}}</textarea>
+                <form>
+                <input type='submit' formmethod='get' formaction='/editNote/{{_id}}' class='button'
+                    value='Edit'>
+                 </form>
+                </div>
+             </li>
+        </ul>
+    {{/each}}
+{{else}}
+    <div id="empty_list">
+        <p>No notes found.</p>
+        <p>If you create a new note it will appear here.</p>
+    </div>
+{{/if}}
+

@@ -3,9 +3,9 @@ module.exports = function (req, res, next) {
     const userSettings = req.session.userSettings || {
         orderBy: 'orderBy',
         orderDirection: -1,
-        filter: false,
+        showFinished: false,
         style: 'style'};
-    const {orderBy, orderDirection, filter, style} = req.query;
+    const {orderBy, orderDirection, showFinished, style} = req.query;
 
     if (orderBy) {
         userSettings.orderBy = orderBy;
@@ -15,8 +15,13 @@ module.exports = function (req, res, next) {
         userSettings.orderDirection = orderDirection;
     }
 
-    if(filter) {
-        userSettings.filter = filter;
+    if(showFinished) {
+        if(showFinished === "0"){
+            userSettings.showFinished = null;
+        }else{
+            userSettings.showFinished = showFinished;
+        }
+
     }
 
     if(style) {

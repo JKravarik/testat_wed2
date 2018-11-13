@@ -3,10 +3,12 @@ const db = require('../services/database.js');
 
 module.exports.index = function(req, res) {
     db.sortedTasks(req, function(docs){
+        console.log("showFinished = ",req.userSettings.showFinished);
         res.render('index', {
             title: 'TODO List',
             theme: req.userSettings.style,
             theOtherSiteThemeWise: '/otherTheme',
+            showfinished: req.userSettings.showFinished,
             task: docs
         });
     });
@@ -46,11 +48,12 @@ module.exports.sortedByCreateDate = function (req, res) {
     }
 };
 
-module.exports.sortedByFinished = function (req, res) {
-    if(req.userSettings.orderDirection === '1') {
-        res.redirect('/?orderBy=finished&orderDirection=-1');
+module.exports.showFinished = function (req, res) {
+    console.log(req.userSettings.showFinished);
+    if(req.userSettings.showFinished === "1") {
+        res.redirect('/?showFinished=0');
     } else {
-        res.redirect('/?orderBy=finished&orderDirection=1');
+        res.redirect('/?showFinished=1');
     }
 };
 

@@ -13,9 +13,6 @@ h1 {
 h2 {
   color: #32488b; }
 
-ul {
-  list-style-type: none; }
-
 .head {
   display: flex;
   flex-direction: row;
@@ -23,12 +20,18 @@ ul {
   justify-content: space-between;
   margin-bottom: 0.5rem; }
 
+.head > div:nth-child(2) {
+  margin-left: auto; }
+
 .body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 2.5rem; }
+
+.body > div:nth-child(4) {
+  margin-left: auto; }
 
 .button {
   background-color: #efefef;
@@ -45,11 +48,17 @@ ul {
   box-shadow: 0px 3px 8px;
   cursor: pointer; }
 
-#show_notes {
+.form_new_note, #task_box, #empty_list {
   background-color: #deeaee;
   color: #32488b;
-  border: solid 1px #8d9db6;
+  border: dotted 1px #8d9db6;
   border-radius: 0.5rem;
   padding: 0.5rem; }
+
+#note_list {
+  list-style: none; }
+
+#save {
+  width: 300px; }
 
 /*# sourceMappingURL=style.css.map */

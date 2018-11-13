@@ -14,7 +14,7 @@ router.post('/save/:id', newNote_controller.updateTask);
 router.get('/byFinishDate', index_controller.sortedByFinishDate);
 router.get('/byImportance', index_controller.sortedByImportance);
 router.get('/byCreatedDate',index_controller.sortedByCreateDate);
-router.get('/byShowFinished',index_controller.sortedByFinished);
+router.get('/byShowFinished',index_controller.showFinished);
 
 module.exports = router;
 
