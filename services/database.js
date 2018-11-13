@@ -23,8 +23,19 @@ module.exports.getAllTask = function (callback){
         },
         Math.floor(Math.random() *100) +1
     )
+};
 
 
+module.exports.sortedTasks = function (callback){
+    console.log("text:", req.userSettings.OrderBy)
+    setTimeout(
+        () => {
+            db.find({}).sort({until: 'desc'}).exec(function(err, docs){
+                callback(docs);
+            });
+        },
+        Math.floor(Math.random() *100) +1
+    )
 };
 
 module.exports.save = function(task){
@@ -36,6 +47,7 @@ module.exports.update = function(id, task){
     db.update({_id: id}, task);
     console.log('updated entry');
 };
+
 
 
 
