@@ -3,41 +3,44 @@
 
 <form>
     <div class="head">
-        <input type='submit' formmethod='get' formaction='/newNote' class='button' value='Create new Note'>
-        <input type='submit' formmethod='get' formaction='{{theOtherSiteThemeWise}}' class='button'
-               value='Style Switcher' id='colorie'>
+        <input type='submit' formmethod='get' formaction='/newNote' class='button' id="create_note"
+               value='Create new Note'>
+        <input type='submit' formmethod='get' formaction='{{theOtherSiteThemeWise}}' class='button' id="color_switch"
+               value='Style Switcher'>
     </div>
 
     <div class="body">
-        <input type='submit' formmethod='get' formaction='/byFinishDate' name='orderBy' class='button'
+        <input type='submit' formmethod='get' formaction='/byFinishDate' name='orderBy' class='button' id="finish_date"
                value='By finish Date'>
-        <input type='submit' formmethod='get' formaction='/byCreatedDate' name='orderBy' class='button'
+        <input type='submit' formmethod='get' formaction='/byCreatedDate' name='orderBy' class='button' id="create_date"
                value='By created Date'>
         <input type='submit' formmethod='get' formaction='/byImportance' name='orderBy' class='button'
+               id="sort_importance"
                value='By Importance'>
         <input type='submit' formmethod='get' formaction='/byShowFinished' name='orderBy' class='button'
+               id="show_finished"
                value='Show Finished'>
     </div>
 </form>
 
 
 {{#if showfinished}}
-        <ul id="note_list">
-        {{#each task}}
+    {{#each task}}
+        <ul id="task_list">
             <li>
                 <div id="task_box">
-                <p id="task_due">{{dueTo}}</p>
-                <p id="task_title">{{title}}</p>
-                <p id="task_importance">{{importance}}</p>
+                    <p id="task_due">{{dueTo}}</p>
+                    <p id="task_title">{{title}}</p>
+                    <p id="task_importance">{{importance}}</p>
 
-                <label><input type="checkbox" name="finished" value="" {{finished}}></label>
-                <textarea>{{description}}</textarea>
-                <form>
-                <input type='submit' formmethod='get' formaction='/editNote/{{_id}}' class='button'
-                    value='Edit'>
-                 </form>
+                    <label><input type="checkbox" name="finished" value="" id="tasklist_finished" {{finished}}></label>
+                    <textarea id="task_description">{{description}}</textarea>
+                    <form>
+                        <input type='submit' formmethod='get' formaction='/editNote/{{_id}}' class='button' id="edit"
+                               value='Edit'>
+                    </form>
                 </div>
-             </li>
+            </li>
         </ul>
     {{/each}}
 {{else}}

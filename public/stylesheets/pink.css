@@ -5,20 +5,39 @@ body {
 a {
   color: #6b0053; }
 
+a:hover {
+  color: #d900a7; }
+
 h1 {
   color: #6b0053; }
+
+h2 {
+  color: #6b0053; }
+
+textarea, #until, #title {
+  background-color: #fceff7;
+  color: #6b0053; }
+
+textarea:focus {
+  background: mistyrose; }
+
+textarea::-moz-selection {
+  background: #ff607c; }
 
 .button {
   background-color: #fcdbed;
   color: #c8155e;
   border: solid 1px #6b0053; }
 
+#show_notes, #task_list, .form_new_note, #empty_list {
+  background-color: #fcdbed;
+  color: #c8155e;
+  border: dotted 1px #6b0053; }
+
 .button:hover {
   background-color: mistyrose; }
 
-#show_notes {
-  background-color: #fcdbea;
-  color: #6b0053;
-  border: solid 1px #c8155e; }
+#note_finished {
+  color: #6b0053; }
 
 /*# sourceMappingURL=pink.css.map */

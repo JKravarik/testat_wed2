@@ -1,2 +1,2 @@
-{"title":"TestNote","description":"Text","until":"2018-11-21","importance":"4","finished":"","createDate":"2018-11-13T20:25:44.039Z","_id":"x9xmromPg6p4tIS2"}
 {"title":"note2","description":"texttext","until":"2018-11-29","importance":"2","finished":"checked","createDate":"2018-11-13T20:26:20.316Z","_id":"cLZiHdgYIMx2clpZ"}
+{"title":"TestNote","description":"Text","until":"2018-11-21","importance":"4","finished":"","createDate":"2018-11-13T20:25:44.039Z","_id":"x9xmromPg6p4tIS2"}

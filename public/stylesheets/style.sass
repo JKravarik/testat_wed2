@@ -5,13 +5,48 @@ body
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
 
 a
-  color: #00B7FF
+  color: #567472
+
+a:hover
+  color: #9dd4d0
 
 h1
   color: #32488b
 
 h2
   color: #32488b
+
+ul
+  list-style-type: none
+
+textarea
+  font: 14px Helvetica
+
+.button
+  background-color: #efefef
+  color: #32488b
+  border: solid 1px #8d9db6
+  border-radius: 0.5rem
+  width: 50%
+  padding: 10px 15px
+  text-align: center
+  cursor: pointer
+
+.button:hover
+  background-color: aliceblue
+  box-shadow: 0px 3px 8px
+
+//Index Buttons
+#create_note, #color_switch
+  flex-basis: 25%
+
+#finish_date, #create_date, #sort_importance
+  flex: 1
+  flex-basis: 20%
+
+#show_finished
+  flex: 1
+  flex-basis: 20%
 
 .head
   display: flex
@@ -20,43 +55,100 @@ h2
   justify-content: space-between
   margin-bottom: 0.5rem
 
-.head > div:nth-child(2)
-  margin-left: auto
-
 .body
   display: flex
   flex-direction: row
   flex-wrap: wrap
   justify-content: space-between
-  margin-bottom: 2.5rem
+  margin-bottom: 2rem
 
-.body > div:nth-child(4)
-  margin-left: auto
-  
-.button
-  background-color: #efefef
+//Index Tasklist
+#task_list, #empty_list
+  display: flex
+  flex-direction: column
+  flex-wrap: nowrap
+  background-color: #deeaee
   color: #32488b
-  border: solid 1px #8d9db6
+  border: dotted 1px #8d9db6
   border-radius: 0.5rem
-  width: 180px
-  padding: 10px 15px
-  text-align: center
-  font-size: 16px
+  padding: 0.5rem
+  list-style: none
 
-.button:hover
-  background-color: aliceblue
-  box-shadow: 0px 3px 8px
-  cursor: pointer
+//TaskBox with grid-area
+#task_due
+  grid-area: head_date
 
-.form_new_note, #task_box, #empty_list
+#task_description
+  grid-area: body_description
+
+#task_title
+  grid-area: head_title
+
+#task_importance
+  grid-area: body_importance
+
+#tasklist_finished
+  grid-area:  body_finished
+
+#edit
+  grid-area: body_edit
+
+#task_box
+  display: grid
+  grid-template-columns: 1fr 1fr 4fr 3fr
+  grid-template-rows: 1fr
+  grid-template-areas:  "head_date head_title . ." "body_finished body_importance body_description body_edit"
+
+
+//Create new Note Form
+.form_new_note
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: space-around
   background-color: #deeaee
   color: #32488b
   border: dotted 1px #8d9db6
   border-radius: 0.5rem
   padding: 0.5rem
 
-#note_list
-  list-style: none
+#form_new_note
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+
+#title, #description, #importance, #until
+  flex: 1
+  flex-basis: 80%
+
+#title_label, #description_label, #importance_label, #until_label
+  flex: 1
+  flex-basis: 15%
+
+#note_finished
+  margin-left: 0
+  color: #32488b
+
+#submit_note
+  display: flex
+  flex-direction: row
+  margin-top: 2.5rem
 
 #save
-  width: 300px
+  flex: 1
+  flex-basis: 80%
+  margin-right: 1rem
+
+#cancel
+  flex: 1
+  flex-basis: 20%
+  padding: 10px 15px
+  text-align: center
+
+
+@media (max-width: 767px)
+  body
+    padding: 0.5rem
+
+  #note_finished
+    margin-left: 0
