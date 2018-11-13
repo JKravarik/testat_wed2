@@ -9,6 +9,8 @@ router.get('/', index_controller.index);
 router.get('/otherTheme', index_controller.otherTheme);
 router.get('/newNote', newNote_controller.index);
 router.post('/create', newNote_controller.createNewTask);
+router.get('/editNote/:id', newNote_controller.editTask);
+router.post('/save/:id', newNote_controller.updateTask);
 
 module.exports = router;
 
