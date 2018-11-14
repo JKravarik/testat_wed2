@@ -2,46 +2,21 @@ const Datastore = require('nedb');
 db = new Datastore({filename: './files/db.txt' , autoload: true});
 
 module.exports.getTask = function (id, callback){
-    setTimeout(
-        () => {
-            db.findOne({_id: id}, function(err, doc){
-                callback(doc);
-            });
-
-        },
-        Math.floor(Math.random() *100) +1
-    )
-};
-
-module.exports.getAllTask = function (callback){
-    setTimeout(
-        () => {
-            db.find({}, function(err, docs){
-                callback(docs);
-            });
-
-        },
-        Math.floor(Math.random() *100) +1
-    )
+    db.findOne({_id: id}, function(err, doc){
+        callback(doc);
+    });
 };
 
 
 module.exports.sortedTasks = function (req, callback){
-
-    setTimeout(
-        () => {
-            db.find({}).sort({[req.userSettings.orderBy]: req.userSettings.orderDirection }).exec(function(err, docs){
-
-                callback(docs);
-            });
-        },
-        Math.floor(Math.random() *100) +1
-    )
+    db.find({}).sort({[req.userSettings.orderBy]: req.userSettings.orderDirection }).exec(function(err, docs){
+        callback(docs);
+    });
 };
 
 module.exports.save = function(task){
-        db.insert(task);
-        console.log('saved new entry');
+    db.insert(task);
+    console.log('saved new entry');
 };
 
 module.exports.update = function(id, task){

@@ -17,7 +17,6 @@ module.exports = function registerHelpers(hbs) {
             case '&&':
                 return (v1 && v2) ? options.fn(this) : options.inverse(this);
             case '||':
-                console.log(v1, v2, (v1 || v2), "blub");
                 return (v1 || v2) ? options.fn(this) : options.inverse(this);
             default:
                 return options.inverse(this);
