@@ -16,11 +16,10 @@ module.exports.index = function(req, res) {
 
 module.exports.otherTheme = function (req, res) {
     if(req.userSettings.style === 'pink') {
-        req.userSettings.style = 'style';
+        res.redirect('/?style=style');
     } else {
-        req.userSettings.style = 'pink';
+        res.redirect('/?style=pink');
     }
-    res.redirect('/');
 };
 
 module.exports.sortedByFinishDate = function (req, res) {
