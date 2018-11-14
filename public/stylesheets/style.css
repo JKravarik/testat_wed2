@@ -71,7 +71,7 @@ textarea, #until, #title {
   color: #32488b;
   border: dotted 1px #8d9db6;
   border-radius: 0.5rem;
-  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+  padding: 0.5rem 1.5rem 1.5rem 1.5rem;
   list-style: none; }
 
 #task_due {
@@ -87,7 +87,8 @@ textarea, #until, #title {
   padding-left: 2rem; }
 
 #task_description {
-  grid-area: body_description; }
+  grid-area: body_description;
+  margin-bottom: 0.5rem; }
 
 #checkbox_label {
   grid-area: body_finished;
@@ -95,14 +96,17 @@ textarea, #until, #title {
 
 #edit_button {
   grid-area: body_edit;
-  padding-left: 2rem; }
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+  display: flex; }
 
 #edit {
-  width: 8rem; }
+  flex: 1;
+  flex-basis: 100%; }
 
 #task_box {
   display: grid;
-  grid-template-columns: 1fr 5fr 3fr;
+  grid-template-columns: 1fr 5fr 2fr;
   grid-template-areas: "head_date head_title head_importance" "body_finished body_description body_edit"; }
 
 .form_new_note {
@@ -114,7 +118,8 @@ textarea, #until, #title {
   color: #32488b;
   border: dotted 1px #8d9db6;
   border-radius: 0.5rem;
-  padding: 0.5rem; }
+  padding: 0.5rem;
+  margin-bottom: 1rem; }
 
 #form_new_note {
   display: flex;
@@ -127,7 +132,8 @@ textarea, #until, #title {
 
 #title_label, #description_label, #importance_label, #until_label {
   flex: 1;
-  flex-basis: 15%; }
+  flex-basis: 15%;
+  font-weight: bold; }
 
 #note_finished {
   margin-left: 0;
@@ -149,10 +155,25 @@ textarea, #until, #title {
   padding: 10px 15px;
   text-align: center; }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 500px) {
   body {
     padding: 0.5rem; }
   #note_finished {
-    margin-left: 0; } }
+    margin-left: 0; }
+  #finish_date, #create_date, #sort_importance, #show_finished {
+    flex-basis: 100%; }
+  #create_note, #color_switch {
+    flex-basis: 50%; }
+  #textarea {
+    resize: horizontal; }
+  #task_list, #empty_list {
+    padding: 0rem 0.5rem 0.5rem 0.5rem; }
+  .form_new_note {
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-bottom: 1rem; }
+  #title_label, #description_label, #importance_label, #until_label {
+    padding-top: 10px;
+    padding-bottom: 5px; } }
 
 /*# sourceMappingURL=style.css.map */

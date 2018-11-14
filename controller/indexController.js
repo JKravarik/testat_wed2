@@ -1,4 +1,5 @@
 const db = require('../services/database.js');
+const hbs = require('hbs');
 
 
 module.exports.index = function(req, res) {
@@ -68,3 +69,10 @@ module.exports.sortedIndex = function(req, res) {
     });
 };
 
+hbs.registerHelper('copy', function(n, block){
+    let result = '';
+    for(let i = 0; i < n; ++i){
+        result += block.fn(i);
+    }
+    return result;
+});

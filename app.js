@@ -3,7 +3,6 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-//const bodyParser = require('body-parser');
 const logger = require('morgan');
 const sassMiddleware = require('node-sass-middleware');
 const userSettings = require('./services/userSettings');
@@ -21,7 +20,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-//app.use(bodyParser());
 
 
 app.use(session({

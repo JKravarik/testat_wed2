@@ -31,8 +31,7 @@
                 <div id="task_box">
                     <p id="task_due">{{until}}</p>
                     <p id="task_title">{{title}}</p>
-                    <p id="task_importance">{{importance}}</p>
-
+                    <p id="task_importance">{{#copy importance}}&#9733{{/copy}}</p>
                     <label id="checkbox_label"><input type="checkbox" name="finished" value=""{{finished}}></label>
                     <textarea id="task_description" readonly>{{description}}</textarea>
                     <form id="edit_button">
@@ -49,4 +48,3 @@
         <p>If you create a new note it will appear here.</p>
     </div>
 {{/unless}}
-
