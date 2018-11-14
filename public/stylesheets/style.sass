@@ -19,15 +19,17 @@ h2
 ul
   list-style-type: none
 
-textarea
+textarea, #until, #title
   font: 14px Helvetica
+  background-color: #efefef
+  color: #32488b
+  resize: none
 
 .button
   background-color: #efefef
   color: #32488b
   border: solid 1px #8d9db6
   border-radius: 0.5rem
-  width: 50%
   padding: 10px 15px
   text-align: center
   cursor: pointer
@@ -35,6 +37,7 @@ textarea
 .button:hover
   background-color: aliceblue
   box-shadow: 0px 3px 8px
+
 
 //Index Buttons
 #create_note, #color_switch
@@ -71,33 +74,41 @@ textarea
   color: #32488b
   border: dotted 1px #8d9db6
   border-radius: 0.5rem
-  padding: 0.5rem
+  padding: 0.5rem 0.5rem 0.5rem 1.5rem
   list-style: none
 
 //TaskBox with grid-area
 #task_due
   grid-area: head_date
+  padding-right: 0.5rem
+
+
+#task_title
+  grid-area: head_title
+  font-weight: bold
+
+#task_importance
+  grid-area: head_importance
+  padding-left: 2rem
 
 #task_description
   grid-area: body_description
 
-#task_title
-  grid-area: head_title
-
-#task_importance
-  grid-area: body_importance
-
-#tasklist_finished
+#checkbox_label
   grid-area:  body_finished
+  padding-right: 2rem
+
+#edit_button
+  grid-area: body_edit
+  padding-left: 2rem
 
 #edit
-  grid-area: body_edit
+  width: 8rem
 
 #task_box
   display: grid
-  grid-template-columns: 1fr 1fr 4fr 3fr
-  grid-template-rows: 1fr
-  grid-template-areas:  "head_date head_title . ." "body_finished body_importance body_description body_edit"
+  grid-template-columns: 1fr 5fr 3fr
+  grid-template-areas:  "head_date head_title head_importance" "body_finished body_description body_edit"
 
 
 //Create new Note Form

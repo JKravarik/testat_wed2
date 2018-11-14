@@ -24,58 +24,29 @@
 </form>
 
 
-
-
-{{#each task}}
-    {{#unless finished}}
+{{#unless showfinished}}
+    {{#each task}}
         <ul id="task_list">
             <li>
                 <div id="task_box">
-                    <p id="task_due">{{dueTo}}</p>
+                    <p id="task_due">{{until}}</p>
                     <p id="task_title">{{title}}</p>
                     <p id="task_importance">{{importance}}</p>
 
-                    <label><input type="checkbox" name="finished" value=""
-                                  id="tasklist_finished" {{finished}}></label>
-                    <textarea id="task_description">{{description}}</textarea>
-                    <form>
-                        <input type='submit' formmethod='get' formaction='/editNote/{{_id}}' class='button'
-                               id="edit"
+                    <label id="checkbox_label"><input type="checkbox" name="finished" value=""{{finished}}></label>
+                    <textarea id="task_description" readonly>{{description}}</textarea>
+                    <form id="edit_button">
+                        <input type='submit' formmethod='get' formaction='/editNote/{{_id}}' class='button' id="edit"
                                value='Edit'>
                     </form>
                 </div>
             </li>
         </ul>
-    {{/unless}} {{else}}
+    {{/each}}
+{{else}}
     <div id="empty_list">
         <p>No notes found.</p>
-        <p>Create a new note or toggle Show Finished to see if there are finished tasks.</p>
+        <p>If you create a new note it will appear here.</p>
     </div>
-{{/each}}
-{{#if showfinished}}
-    {{#each task}}
-        {{#if finished}}
-            <ul id="task_list">
-                <li>
-                    <div id="task_box">
-                        <p id="task_due">{{dueTo}}</p>
-                        <p id="task_title">{{title}}</p>
-                        <p id="task_importance">{{importance}}</p>
-
-                        <label><input type="checkbox" name="finished" value=""
-                                      id="tasklist_finished" {{finished}}></label>
-                        <textarea id="task_description">{{description}}</textarea>
-                        <form>
-                            <input type='submit' formmethod='get' formaction='/editNote/{{_id}}' class='button'
-                                   id="edit"
-                                   value='Edit'>
-                        </form>
-                    </div>
-                </li>
-            </ul>
-        {{/if}}
-    {{/each}}
-{{/if}}
-
-
+{{/unless}}
 
