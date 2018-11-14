@@ -8,13 +8,18 @@ const sassMiddleware = require('node-sass-middleware');
 const userSettings = require('./services/userSettings');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const registerHelpers = require('./services/hbsCondition');
+const hbs = require('express-hbs');
 
 const app = express();
 
+
+
 // view engine setup
+app.engine("hbs", hbs.express4({defaultLayout: "./views/layout"}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-
+registerHelpers(hbs);
 
 app.use(logger('dev'));
 app.use(express.json());

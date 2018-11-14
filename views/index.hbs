@@ -24,8 +24,9 @@
 </form>
 
 
-{{#unless showfinished}}
-    {{#each task}}
+
+{{#each task}}
+    {{#ifCond ../showfinished "||" (not finished)}}
         <ul id="task_list">
             <li>
                 <div id="task_box">
@@ -41,10 +42,13 @@
                 </div>
             </li>
         </ul>
-    {{/each}}
+    {{/ifCond}}
 {{else}}
     <div id="empty_list">
         <p>No notes found.</p>
         <p>If you create a new note it will appear here.</p>
     </div>
-{{/unless}}
+{{/each}}
+
+
+

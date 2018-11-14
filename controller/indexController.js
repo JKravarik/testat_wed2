@@ -69,10 +69,4 @@ module.exports.sortedIndex = function(req, res) {
     });
 };
 
-hbs.registerHelper('copy', function(n, block){
-    let result = '';
-    for(let i = 0; i < n; ++i){
-        result += block.fn(i);
-    }
-    return result;
-});
+
