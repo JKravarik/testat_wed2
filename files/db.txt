@@ -1,4 +1,6 @@
 {"title":"noch eine","description":"damits noch mehr hat","until":"2018-11-24","importance":"2","finished":"checked","createDate":"2018-11-14T12:21:15.633Z","_id":"76C6sifPAzKKGsxM"}
-{"title":"ahd iaod","description":"asdasd ad","until":"2018-11-08","importance":"3","finished":"","createDate":"2018-11-14T12:28:05.779Z","_id":"eOwBWiMvqCi9ZTEM"}
+{"title":"ahd iaod","description":"asdasd ad","until":"2018-11-08","importance":"3","finished":"checked","createDate":"2018-11-14T14:22:03.572Z","_id":"eOwBWiMvqCi9ZTEM"}
 {"title":"Testnote","description":"Hier steht wichtiger text","until":"2018-11-17","importance":"3","finished":"checked","createDate":"2018-11-14T12:16:53.616Z","_id":"lZN5mzOFWDTHQoQQ"}
 {"title":"Testnote","description":"Blabla blaaa","until":"2018-11-16","importance":"5","finished":"checked","createDate":"2018-11-14T12:21:20.606Z","_id":"xduOYu7BpXkMUGHk"}
+{"title":"dfadsf","description":"sdafdsaf","until":"2018-11-14","importance":"3","finished":"","createDate":"2018-11-14T14:24:43.538Z","_id":"cWYMQHWQYuYIAZIf"}
+{"title":"dfadsf","description":"sdafdsaf","until":"2018-11-14","importance":"3","finished":"checked","createDate":"2018-11-14T14:24:50.736Z","_id":"cWYMQHWQYuYIAZIf"}

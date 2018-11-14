@@ -34,5 +34,15 @@ module.exports = function registerHelpers(hbs) {
     hbs.registerHelper("not", function(n){
         return !n;
     });
+    let empty = false;
+    hbs.registerHelper("getEmpty", function(){
+        console.log("getEmpty", empty);
+        return empty;
+    });
+
+    hbs.registerHelper("setEmpty", function(bool) {
+        console.log("setEmpty: ",empty, bool);
+        empty = bool;
+    })
 }
 
